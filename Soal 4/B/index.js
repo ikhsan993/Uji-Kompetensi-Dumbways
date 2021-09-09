@@ -205,6 +205,7 @@ console.log(results);
         });
     
 });
+
 app.post ('/editkab', function (request, response){
     let {name,diresmikan,photo,provinsi} = request.body;
     let id = request.body.id;

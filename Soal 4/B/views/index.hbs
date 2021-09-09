@@ -1,5 +1,14 @@
 {{> header }}
 {{> navbar }}
+
+<select name="" id="" style="padding: 7px; width:200px; margin : 20px 50px;">
+  <option value="">Select Provinsi</option>
+  {{#each data}}
+  <option id="opt" value="{{id}}">{{ nama }}</option>
+  {{/each}}
+</select>
+<a href="" id="link"><button class="btn btn-danger"> Search </button></a>
+
  <br>
  <div class="me-5 mb-2 float-right">
   <a href="/addprov"><button class="btn btn-primary"><i class="fa fa-plus" aria-hidden="true"> Tambah Provinsi</i></button></a>
@@ -23,23 +32,11 @@
 	</div>
     </div>
     </div>
+    <script>
+      function handleChange(){
+let link = document.getElementById('link');
+let id = document.getElementById('opt').value;
+link.setAttribute(href,`/prov/kab/${id}`);
+  }
+  </script>
      <footer class="text-center mt-5 footer bg-danger px-2 py-4 text-light fs-3"> Created by Amirul Ikhsan </footer>
-
-{{!-- {{> footer }}  <script>
-//  var diresmikan = document.getElementById('diresmikan');
-//var foundDay = document.getElementById('resmi').value;
-//function formatDate(date) {
-//    var d = new Date(date),
-        month = '' + (d.getMonth() + 1),
-        day = '' + d.getDate(),
-        year = d.getFullYear();
-
-    if (month.length < 2) 
-        month = '0' + month;
-    if (day.length < 2) 
-        day = '0' + day;
-
- / /  return [day, month, year].join('-');
-}
-//console.log(formatDate(foundDay));
-</script> --}}
