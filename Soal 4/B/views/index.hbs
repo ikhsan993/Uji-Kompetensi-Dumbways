@@ -1,0 +1,45 @@
+{{> header }}
+{{> navbar }}
+ <br>
+ <div class="me-5 mb-2 float-right">
+  <a href="/addprov"><button class="btn btn-primary"><i class="fa fa-plus" aria-hidden="true"> Tambah Provinsi</i></button></a>
+            </div>
+            <br>
+<div class="container content border-box mt-5 ">     
+        <div class="col-12 box-shadow rounded">
+			<div class="row">
+			{{#each data}}
+  <div class="no-padding card mb-3 ms-3 float-left" style="width: 23%;">
+    <div class="card-header"><h6>{{nama}}</h6></div>
+  <img class="card-img-top" src="/public/image/{{photo}}" height="200px" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title"> {{diresmikan}}</h5>
+    <input type="hidden" name="" id="resmi" value="{{diresmikan}}">
+    <a href="/provdetail/{{id}}"> <button class="btn btn-primary">Detail</button> </a>
+  </div>
+    </div>
+	
+	{{/each}}
+	</div>
+    </div>
+    </div>
+     <footer class="text-center mt-5 footer bg-danger px-2 py-4 text-light fs-3"> Created by Amirul Ikhsan </footer>
+
+{{!-- {{> footer }}  <script>
+//  var diresmikan = document.getElementById('diresmikan');
+//var foundDay = document.getElementById('resmi').value;
+//function formatDate(date) {
+//    var d = new Date(date),
+        month = '' + (d.getMonth() + 1),
+        day = '' + d.getDate(),
+        year = d.getFullYear();
+
+    if (month.length < 2) 
+        month = '0' + month;
+    if (day.length < 2) 
+        day = '0' + day;
+
+ / /  return [day, month, year].join('-');
+}
+//console.log(formatDate(foundDay));
+</script> --}}

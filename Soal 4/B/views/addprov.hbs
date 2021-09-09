@@ -1,0 +1,49 @@
+{{> header }}
+
+{{> navbar }}
+<div class="container mt-5">
+	<div class="d-flex justify-content-center h-100">
+		<div class="card">
+      <div class="card-header bg-danger text-light">
+				<h3>{{ title }}</h3>
+					 
+			</div>
+		<form action="/addprov"  class="px-3 py-2" method="POST" >
+  <div class="form-group py-1">
+    <label for="exampleInputEmail1">Nama Provinsi</label>
+    <input type="text" class="form-control"  placeholder="Nama Provinsi" name="nama" required>
+  </div>
+  <div class="form-group py-1">
+    <label for="exampleInputEmail1">Tangal Diresmikan</label>
+    <input type="date" class="form-control"  placeholder="Nama Provinsi" name="resmi" required>
+  </div>
+   <div class="form-group py-1">
+    <label for="exampleInputEmail1">Gambar</label>
+    <input type="file" class="form-control"  onchange="handleChange()" name="photo" required>
+  </div>
+   <div id="preview-thumbnail" class="my-2">
+
+  </div> 
+
+    <div class="form-group py-1">
+    <label for="exampleInputEmail1">Pulau</label>
+    <input type="text" class="form-control" placeholder="Pulau" name="pulau" required>
+  </div>
+ 
+  <button type="submit" class="btn btn-danger mt-2 btn-login">Submit</button>
+</form>
+					</div>
+			</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+  function handleChange(){
+    const previewElement = document.getElementById('preview-thumbnail');
+    const value = URL.createObjectURL(event.target.files[0]);
+    previewElement.innerHTML = `<img src ="${value}" style="width:250px;" />`
+  }
+</script>
+<footer class="text-center mt-5 footer bg-danger px-2 py-4 text-light fs-3"> Created by Amirul Ikhsan </footer>
+{{> footer }}
