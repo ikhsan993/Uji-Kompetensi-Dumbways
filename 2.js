@@ -1,4 +1,4 @@
-  
+var arr = [20, 12, 35, 11,  17, 9, 58, 23, 69, 21];  
 // Creating the bblSort function
 function bblSort(arr){
    
@@ -27,7 +27,7 @@ function bblSort(arr){
      
    // This is our unsorted array
   
-   var arr = [20, 12, 35, 11,  17, 9, 58, 23, 69, 21];
+  
      
    // Now pass this array to the bblSort() function
    bblSort(arr);

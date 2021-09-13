@@ -96,7 +96,24 @@ app.get ('/kabupaten', function (request, response){
         });
     
 });
+app.get ('/kabinprov/:id', function (request, response){ 
+    const id = request.params.id;
+    const title = 'Kabupaten';
+    const query = `select * from kabupaten where provinsi_id = ${id} ;`
+    dbConnection.getConnection(function(err, conn){
+        if (err)  throw err;
+            conn.query(query,function(err,results){
+             if (err) throw err;             
 
+           response.render('kabupaten',{
+            title : title,
+            data : results,
+        });
+        conn.release();
+            });
+        });
+    
+});
 app.get ('/addkab',function (request, response){
     const title = 'Tambah Data Kabupaten'
     const query = 'select * from provinsi';

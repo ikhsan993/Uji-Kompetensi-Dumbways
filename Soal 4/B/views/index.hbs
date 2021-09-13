@@ -1,13 +1,14 @@
 {{> header }}
 {{> navbar }}
 
-<select name="" id="" style="padding: 7px; width:200px; margin : 20px 50px;">
+<select name="select" id="select" onchange="handleChange()" style="padding: 7px; width:200px; margin : 20px 50px;">
   <option value="">Select Provinsi</option>
   {{#each data}}
-  <option id="opt" value="{{id}}">{{ nama }}</option>
+  <option class="opt" value="{{id}}">{{ nama }}</option>
   {{/each}}
 </select>
-<a href="" id="link"><button class="btn btn-danger"> Search </button></a>
+<span id="link"><button class="btn btn-danger">Search</button>
+</span>
 
  <br>
  <div class="me-5 mb-2 float-right">
@@ -35,8 +36,9 @@
     <script>
       function handleChange(){
 let link = document.getElementById('link');
-let id = document.getElementById('opt').value;
-link.setAttribute(href,`/prov/kab/${id}`);
+let id = document.getElementById('select').value;
+
+location.replace(`/kabinprov/${id}`)
   }
   </script>
      <footer class="text-center mt-5 footer bg-danger px-2 py-4 text-light fs-3"> Created by Amirul Ikhsan </footer>
