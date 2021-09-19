@@ -7,12 +7,10 @@
   <option class="opt" value="{{id}}">{{ nama }}</option>
   {{/each}}
 </select>
-<span id="link"><button class="btn btn-danger">Search</button>
-</span>
 
  <br>
  <div class="me-5 mb-2 float-right">
-  <a href="/addprov"><button class="btn btn-primary"><i class="fa fa-plus" aria-hidden="true"> Tambah Provinsi</i></button></a>
+  <a href="/provinsi/add"><button class="btn btn-primary"><i class="fa fa-plus" aria-hidden="true"> Tambah Provinsi</i></button></a>
             </div>
             <br>
 <div class="container content border-box mt-5 ">     
@@ -25,7 +23,7 @@
   <div class="card-body">
     <h5 class="card-title"> {{diresmikan}}</h5>
     <input type="hidden" name="" id="resmi" value="{{diresmikan}}">
-    <a href="/provdetail/{{id}}"> <button class="btn btn-primary">Detail</button> </a>
+    <a href="/provinsi/detail/{{id}}"> <button class="btn btn-primary">Detail</button> </a>
   </div>
     </div>
 	
@@ -38,7 +36,7 @@
 let link = document.getElementById('link');
 let id = document.getElementById('select').value;
 
-location.replace(`/kabinprov/${id}`)
+location.replace(`/kabupaten/prov/${id}`)
   }
   </script>
      <footer class="text-center mt-5 footer bg-danger px-2 py-4 text-light fs-3"> Created by Amirul Ikhsan </footer>
